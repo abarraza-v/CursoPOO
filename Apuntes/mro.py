@@ -29,4 +29,5 @@ d.hablar()
 # Forzar que un objeto utilize un método de la clase A, pasándole el objeto como parámetro self
 # A.hablar(d)
 
+# El método mro (Method Resolution Order) muestra el orden de qué heredará primero el objeto.
 print(D.mro())
