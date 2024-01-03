@@ -1,3 +1,6 @@
+# La abstracción es ocultar la complejidad detrás de un sistema.
+
+
 class Auto:
     def __init__(self):
         self._estado = "apagado"
@@ -16,5 +19,7 @@ class Auto:
 
 
 mi_auto = Auto()
-mi_auto.conducir()
+
+# En este código, el usuario no se preocupa de verificar si el auto encendió o no antes de conducir, simplemente conduce.
+# La complejidad del sistema está oculta mediante abstracción.
 mi_auto.conducir()
