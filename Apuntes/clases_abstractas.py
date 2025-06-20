@@ -1,17 +1,16 @@
-from abc import ABC, abstractclassmethod
-
+from abc import ABC, abstractmethod
 
 # Cuando una clase hereda de una superclase abstracta, esta la hace firmar una especie de contrato
 # que la obliga a implementar los métodos abstractos. Esto fomenta el polimorfismo y nos evita cometer errores.
 class Persona(ABC):
-    @abstractclassmethod
+    @abstractmethod
     def __init__(self, nombre, apellido, edad, actividad):
         self.nombre = nombre
         self.apellido = apellido
         self.edad = edad
         self.actividad = actividad
 
-    @abstractclassmethod
+    @abstractmethod
     def hacer_actividad(self):
         pass
 
