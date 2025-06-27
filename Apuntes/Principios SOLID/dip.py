@@ -97,25 +97,23 @@ Imaginemos que tenemos una función registrar_usuario():
 ❌ Si Notificador depende internamente de EmailService, entonces registrar_usuario también queda amarrada a ese servicio:
 
 """ 
+
 def registrar_usuario():
     notificador = Notificador()  # usa EmailService internamente
     notificador.notificar("Bienvenido") 
-"""
 
-✅ Pero si seguimos DIP, registrar_usuario puede recibir cualquier servicio por fuera:
-
+""" ✅ Pero si seguimos DIP, registrar_usuario puede recibir cualquier servicio por fuera: """
+ 
 def registrar_usuario(servicio: ServicioNotificacion):
     notificador = Notificador(servicio)
-    notificador.notificar("Bienvenido")
+    notificador.notificar("Bienvenido") 
 
-""" 
 # En otra parte del código (MockService y SMSServices entre comillas para evitar alerta de error. Esto solo con fines demostrativos.):
 registrar_usuario(EmailService())
 registrar_usuario("MockService"())  # para pruebas unitarias
 registrar_usuario("SMSService"())   # para un nuevo canal 
 
 """
-
 Así logramos que registrar_usuario no cambie nunca, aunque cambie la tecnología detrás.
 
 ---
